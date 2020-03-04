@@ -1,10 +1,12 @@
 import FechaNacimiento from "./fecha-nacimiento.js";
 import Nombre from "./nombre.js";
+import Persona from "./persona.js";
 
 class Main {
      constructor() {
          this.fecha = new FechaNacimiento(3, 3, 2005)
          this.nombre = new Nombre("Juan", "Gonzales", "Godinez")
+         this.persona = new Persona(this.nombre, this.fecha, "Masculino")
      }
 
      testFechaNacimiento(){
@@ -28,8 +30,12 @@ class Main {
          console.log(this.nombre.getApellidoMaterno())
          
      }
+     testPersona(){
+         console.log(this.persona.getPerfil())
+     }
 }
 
 let tester = new Main()
 tester.testFechaNacimiento()
 tester.testNombre()
+tester.testPersona()
