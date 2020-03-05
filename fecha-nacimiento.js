@@ -30,7 +30,7 @@ export default class FechaNacimiento{
     {
         let dia = this._fecha.getDay()
         
-        return (semana[dia]+" "+this.dia+" de "+meses[this.mes]+" del "+this.año)
+        return (semana[dia]+" "+this.dia+" de "+meses[this.mes-1]+" del "+this.año)
         
     }
     getFecha()

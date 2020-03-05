@@ -1,12 +1,17 @@
 import FechaNacimiento from "./fecha-nacimiento.js";
 import Nombre from "./nombre.js";
 import Persona from "./persona.js";
+import Estudiante from "./estudiante.js"
+import Maestro from "./maestro.js";
+import Grupo from "./grupo.js";
 
 class Main {
      constructor() {
          this.fecha = new FechaNacimiento(3, 3, 2005)
          this.nombre = new Nombre("Juan", "Gonzales", "Godinez")
          this.persona = new Persona(this.nombre, this.fecha, "Masculino")
+         this.grupo = new Grupo(2,"G")
+
      }
 
      testFechaNacimiento(){
@@ -32,6 +37,56 @@ class Main {
      }
      testPersona(){
          console.log(this.persona.getPerfil())
+
+     }
+
+     testEstudiante(){
+         let e = new Estudiante(
+            this.nombre,
+            this.fecha,
+            "Masculino",
+            20161012,
+            "lisordia@ucol.mx",
+            "Facultad de telematica")
+
+         e.print();
+     }
+
+     testMaestro(){
+         let x = new Maestro(
+             new Nombre("ramon","ramirez","rodriguez"),
+             new FechaNacimiento(15, 3, 2014),
+             "Motor de lancha",
+             5000,
+             20164872,
+             "Matematicas")
+
+         x.print()
+         
+     }
+     
+     testGrupo(){
+        let e = new Estudiante(
+            this.nombre,
+            this.fecha,
+            "Masculino",
+            20161012,
+            "lisordia@ucol.mx",
+            "Facultad de telematica")
+
+        let e2 = new Estudiante(
+                new Nombre("ramon","ramirez","rodriguez"),
+                new FechaNacimiento(1, 7, 2018),
+                "Masculino",
+                20175812,
+                "liia@ucol.mx",
+                "Facultad de telematica")
+
+         console.log(this.grupo._encontrarEstudiante(e))
+         console.log(this.grupo.registrar(e))
+         console.log(this.grupo.registrar(e2))
+         console.log(this.grupo._encontrarEstudiante(e))
+         this.grupo.listar()
      }
 }
 
@@ -39,3 +94,6 @@ let tester = new Main()
 tester.testFechaNacimiento()
 tester.testNombre()
 tester.testPersona()
+tester.testEstudiante()
+tester.testMaestro()
+tester.testGrupo()

@@ -1,5 +1,11 @@
 export default class Persona{
 
+    /**
+     * 
+     * @param {Nombre} nombre 
+     * @param {FechaNacimiento} fechaNac 
+     * @param {string} genero 
+     */
     constructor(nombre, fechaNac, genero){
         this._nombre = nombre
         this._fechaNac = fechaNac
