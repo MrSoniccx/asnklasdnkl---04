@@ -85,6 +85,7 @@ class Main {
          console.log(this.grupo._encontrarEstudiante(e))
          console.log(this.grupo.registrar(e))
          console.log(this.grupo.registrar(e2))
+         
          console.log(this.grupo._encontrarEstudiante(e))
          this.grupo.listar()
      }
