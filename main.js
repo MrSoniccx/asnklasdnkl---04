@@ -65,7 +65,21 @@ class Main {
          
      }
      
+     
      testGrupo(){
+
+
+        let datosEstudiante = {
+            nombre: new Nombre("Maria", "Juarez", "Zapata"),
+            fechaNacimiento: new FechaNacimiento(15,10,2003),
+            genero: "Femenino",
+            numeroCuenta: 20134455,
+            correo: "mario@ucol.mx",
+            escuela: "Facultad de medicina"
+        }
+
+        let e4 = new Estudiante(datosEstudiante)
+
         let e = new Estudiante(
             this.nombre,
             this.fecha,
@@ -82,11 +96,24 @@ class Main {
                 "liia@ucol.mx",
                 "Facultad de telematica")
 
+        let e3 = new Estudiante(
+            this.nombre,
+            this.fecha,
+            "Masculino",
+            20161012,
+            "lisordia@ucol.mx",
+            "Facultad de telematica")
+
          console.log(this.grupo._encontrarEstudiante(e))
          console.log(this.grupo.registrar(e))
          console.log(this.grupo.registrar(e2))
+         console.log(this.grupo.registrar(e3))
+         console.log(this.grupo.registrar(e4))
          
          console.log(this.grupo._encontrarEstudiante(e))
+         console.log(this.grupo._encontrarIndiceEstudiante(e))
+         console.log(this.grupo.removeEstudiante(e3))
+         console.log(this.grupo.actualizar(e,e2))
          this.grupo.listar()
      }
 }
